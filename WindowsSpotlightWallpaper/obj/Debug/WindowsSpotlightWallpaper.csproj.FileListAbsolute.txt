@@ -1,0 +1,9 @@
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\bin\Debug\WindowsSpotlightWallpaper.exe.config
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\bin\Debug\WindowsSpotlightWallpaper.exe
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\bin\Debug\WindowsSpotlightWallpaper.pdb
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\obj\Debug\WindowsSpotlightWallpaper.csprojResolveAssemblyReference.cache
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\obj\Debug\WindowsSpotlightWallpaper.Properties.Resources.resources
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\obj\Debug\WindowsSpotlightWallpaper.csproj.GenerateResource.Cache
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\obj\Debug\WindowsSpotlightWallpaper.exe
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\obj\Debug\WindowsSpotlightWallpaper.pdb
+E:\Code\personal-git\Windows-spotlight-wallpaper\WindowsSpotlightWallpaper\WindowsSpotlightWallpaper\obj\Debug\WindowsSpotlightWallpaper.MainForm.resources
