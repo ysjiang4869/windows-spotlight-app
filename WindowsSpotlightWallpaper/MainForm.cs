@@ -37,9 +37,9 @@ namespace WindowsSpotlightWallpaper
             bool res = copyFile();
             if (res)
             {
-                classify();
-                sortFiles(horizontalFolder);
-            }            
+                classify();               
+            }
+            sortFiles(horizontalFolder);
         }
         private void init()
         {
@@ -184,7 +184,15 @@ namespace WindowsSpotlightWallpaper
 
         private void SaveFolderToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FolderBrowserDialog browser = new FolderBrowserDialog();
+            DialogResult res = browser.ShowDialog();
+            if (res.Equals(DialogResult.OK))
+            {
+                string oldfolder= settingService.getSavePath() + "\\Spotlight\\";
+                settingService.setSavePath(browser.SelectedPath);
+                init();
+                Directory.Move(oldfolder, settingService.getSavePath() + "\\Spotlight\\");
+            }
         }
 
         private void StartMethodToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,8 +200,9 @@ namespace WindowsSpotlightWallpaper
 
         }
 
-       
-
-       
+        private void ResetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settingService.reset();
+        }
     }
 }

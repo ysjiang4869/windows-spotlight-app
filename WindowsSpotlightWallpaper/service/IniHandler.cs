@@ -57,5 +57,14 @@ namespace WindowsSpotlightWallpaper
         {
             File.Create(inipath);
         }
+
+        public void reset()
+        {
+            if (ExistINIFile())
+            {
+                File.Delete(inipath);
+                File.Create(inipath);
+            }        
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,6 +57,11 @@ namespace WindowsSpotlightWallpaper.service
                return DateTime.Parse("2000-01-01");
             }
             return DateTime.Parse(ret);
-        } 
+        }
+        
+        public void reset()
+        {
+            handler.reset();
+        }
     }
 }

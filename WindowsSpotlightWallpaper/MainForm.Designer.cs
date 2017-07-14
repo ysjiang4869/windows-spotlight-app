@@ -34,6 +34,8 @@
             this.NextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SaveFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.StartMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +43,7 @@
             this.ForwardButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.SetButton = new System.Windows.Forms.Button();
-            this.SaveFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.StartMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ResetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -72,21 +73,21 @@
             // ForwardToolStripMenuItem1
             // 
             this.ForwardToolStripMenuItem1.Name = "ForwardToolStripMenuItem1";
-            this.ForwardToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ForwardToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.ForwardToolStripMenuItem1.Text = "上一张";
             this.ForwardToolStripMenuItem1.Click += new System.EventHandler(this.ForwardToolStripMenuItem1_Click);
             // 
             // NextToolStripMenuItem
             // 
             this.NextToolStripMenuItem.Name = "NextToolStripMenuItem";
-            this.NextToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.NextToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.NextToolStripMenuItem.Text = "下一张";
             this.NextToolStripMenuItem.Click += new System.EventHandler(this.NextToolStripMenuItem_Click);
             // 
             // SetToolStripMenuItem1
             // 
             this.SetToolStripMenuItem1.Name = "SetToolStripMenuItem1";
-            this.SetToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.SetToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
             this.SetToolStripMenuItem1.Text = "设为壁纸";
             this.SetToolStripMenuItem1.Click += new System.EventHandler(this.SetToolStripMenuItem1_Click);
             // 
@@ -94,10 +95,25 @@
             // 
             this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SaveFolderToolStripMenuItem,
-            this.StartMethodToolStripMenuItem});
+            this.StartMethodToolStripMenuItem,
+            this.ResetToolStripMenuItem});
             this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
             this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.设置ToolStripMenuItem.Text = "设置";
+            // 
+            // SaveFolderToolStripMenuItem
+            // 
+            this.SaveFolderToolStripMenuItem.Name = "SaveFolderToolStripMenuItem";
+            this.SaveFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SaveFolderToolStripMenuItem.Text = "修改存储路径";
+            this.SaveFolderToolStripMenuItem.Click += new System.EventHandler(this.SaveFolderToolStripMenuItem_Click);
+            // 
+            // StartMethodToolStripMenuItem
+            // 
+            this.StartMethodToolStripMenuItem.Name = "StartMethodToolStripMenuItem";
+            this.StartMethodToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.StartMethodToolStripMenuItem.Text = "开机启动";
+            this.StartMethodToolStripMenuItem.Click += new System.EventHandler(this.StartMethodToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
@@ -159,19 +175,12 @@
             this.SetButton.UseVisualStyleBackColor = true;
             this.SetButton.Click += new System.EventHandler(this.SetButton_Click);
             // 
-            // SaveFolderToolStripMenuItem
+            // ResetToolStripMenuItem
             // 
-            this.SaveFolderToolStripMenuItem.Name = "SaveFolderToolStripMenuItem";
-            this.SaveFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.SaveFolderToolStripMenuItem.Text = "修改存储路径";
-            this.SaveFolderToolStripMenuItem.Click += new System.EventHandler(this.SaveFolderToolStripMenuItem_Click);
-            // 
-            // StartMethodToolStripMenuItem
-            // 
-            this.StartMethodToolStripMenuItem.Name = "StartMethodToolStripMenuItem";
-            this.StartMethodToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.StartMethodToolStripMenuItem.Text = "开机启动";
-            this.StartMethodToolStripMenuItem.Click += new System.EventHandler(this.StartMethodToolStripMenuItem_Click);
+            this.ResetToolStripMenuItem.Name = "ResetToolStripMenuItem";
+            this.ResetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ResetToolStripMenuItem.Text = "恢复默认设置";
+            this.ResetToolStripMenuItem.Click += new System.EventHandler(this.ResetToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -213,6 +222,7 @@
         private System.Windows.Forms.ToolStripMenuItem 说明ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveFolderToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem StartMethodToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ResetToolStripMenuItem;
     }
 }
 
