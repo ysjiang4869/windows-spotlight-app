@@ -32,3 +32,5 @@
 *.app
 bin
 obj
+.vs
+.vs
