@@ -29,13 +29,20 @@
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.下一张ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.上一张ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.设为壁纸ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ForwardToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.NextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SetToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.关于ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.说明ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.ForwardButton = new System.Windows.Forms.Button();
             this.NextButton = new System.Windows.Forms.Button();
             this.SetButton = new System.Windows.Forms.Button();
+            this.SaveFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.StartMethodToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.SuspendLayout();
@@ -43,32 +50,75 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.下一张ToolStripMenuItem,
-            this.上一张ToolStripMenuItem,
-            this.设为壁纸ToolStripMenuItem});
+            this.OptionToolStripMenuItem,
+            this.设置ToolStripMenuItem,
+            this.关于ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1083, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // 下一张ToolStripMenuItem
+            // OptionToolStripMenuItem
             // 
-            this.下一张ToolStripMenuItem.Name = "下一张ToolStripMenuItem";
-            this.下一张ToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
-            this.下一张ToolStripMenuItem.Text = "下一张";
+            this.OptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ForwardToolStripMenuItem1,
+            this.NextToolStripMenuItem,
+            this.SetToolStripMenuItem1});
+            this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.OptionToolStripMenuItem.Text = "操作";
             // 
-            // 上一张ToolStripMenuItem
+            // ForwardToolStripMenuItem1
             // 
-            this.上一张ToolStripMenuItem.Name = "上一张ToolStripMenuItem";
-            this.上一张ToolStripMenuItem.Size = new System.Drawing.Size(56, 21);
-            this.上一张ToolStripMenuItem.Text = "上一张";
+            this.ForwardToolStripMenuItem1.Name = "ForwardToolStripMenuItem1";
+            this.ForwardToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.ForwardToolStripMenuItem1.Text = "上一张";
+            this.ForwardToolStripMenuItem1.Click += new System.EventHandler(this.ForwardToolStripMenuItem1_Click);
             // 
-            // 设为壁纸ToolStripMenuItem
+            // NextToolStripMenuItem
             // 
-            this.设为壁纸ToolStripMenuItem.Name = "设为壁纸ToolStripMenuItem";
-            this.设为壁纸ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.设为壁纸ToolStripMenuItem.Text = "设为壁纸";
+            this.NextToolStripMenuItem.Name = "NextToolStripMenuItem";
+            this.NextToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.NextToolStripMenuItem.Text = "下一张";
+            this.NextToolStripMenuItem.Click += new System.EventHandler(this.NextToolStripMenuItem_Click);
+            // 
+            // SetToolStripMenuItem1
+            // 
+            this.SetToolStripMenuItem1.Name = "SetToolStripMenuItem1";
+            this.SetToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.SetToolStripMenuItem1.Text = "设为壁纸";
+            this.SetToolStripMenuItem1.Click += new System.EventHandler(this.SetToolStripMenuItem1_Click);
+            // 
+            // 设置ToolStripMenuItem
+            // 
+            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveFolderToolStripMenuItem,
+            this.StartMethodToolStripMenuItem});
+            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Text = "设置";
+            // 
+            // 关于ToolStripMenuItem
+            // 
+            this.关于ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.关于ToolStripMenuItem1,
+            this.说明ToolStripMenuItem});
+            this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
+            this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.关于ToolStripMenuItem.Text = "帮助";
+            // 
+            // 关于ToolStripMenuItem1
+            // 
+            this.关于ToolStripMenuItem1.Name = "关于ToolStripMenuItem1";
+            this.关于ToolStripMenuItem1.Size = new System.Drawing.Size(100, 22);
+            this.关于ToolStripMenuItem1.Text = "关于";
+            // 
+            // 说明ToolStripMenuItem
+            // 
+            this.说明ToolStripMenuItem.Name = "说明ToolStripMenuItem";
+            this.说明ToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
+            this.说明ToolStripMenuItem.Text = "说明";
             // 
             // pictureBox
             // 
@@ -109,6 +159,20 @@
             this.SetButton.UseVisualStyleBackColor = true;
             this.SetButton.Click += new System.EventHandler(this.SetButton_Click);
             // 
+            // SaveFolderToolStripMenuItem
+            // 
+            this.SaveFolderToolStripMenuItem.Name = "SaveFolderToolStripMenuItem";
+            this.SaveFolderToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.SaveFolderToolStripMenuItem.Text = "修改存储路径";
+            this.SaveFolderToolStripMenuItem.Click += new System.EventHandler(this.SaveFolderToolStripMenuItem_Click);
+            // 
+            // StartMethodToolStripMenuItem
+            // 
+            this.StartMethodToolStripMenuItem.Name = "StartMethodToolStripMenuItem";
+            this.StartMethodToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.StartMethodToolStripMenuItem.Text = "开机启动";
+            this.StartMethodToolStripMenuItem.Click += new System.EventHandler(this.StartMethodToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -135,13 +199,20 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem 下一张ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 上一张ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 设为壁纸ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button ForwardButton;
         private System.Windows.Forms.Button NextButton;
         private System.Windows.Forms.Button SetButton;
+        private System.Windows.Forms.ToolStripMenuItem ForwardToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem NextToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SetToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 关于ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 说明ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem SaveFolderToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem StartMethodToolStripMenuItem;
     }
 }
 
