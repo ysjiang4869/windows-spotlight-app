@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -62,6 +63,35 @@ namespace WindowsSpotlightWallpaper.service
         public void reset()
         {
             handler.reset();
+        }
+
+        public string getAutoRun()
+        {
+            RegistryKey loca_chek = Registry.LocalMachine;
+            RegistryKey run_Check = loca_chek.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
+            if (run_Check.GetValue("WindowsSpotlight").ToString().ToLower() != "false")
+            {
+                return "true";
+            }
+            else
+            {
+                return "false";
+            }
+        }
+
+        public void setAutoChange(string set)
+        {
+            handler.IniWriteValue("basic", "autochange", set);
+        }
+
+        public string getAutoChange()
+        {
+            string ret = handler.IniReadValue("basic", "autochange");
+            if (ret == "")
+            {
+                ret = "false";
+            }
+            return ret;
         }
     }
 }
