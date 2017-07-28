@@ -258,14 +258,12 @@ namespace WindowsSpotlightWallpaper
         private void AutodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.AutoToolStripMenuItem1.Text == "自动更换")
-            {
-                this.timer1.Enabled = true;
+            {                
                 settingService.setAutoChange("true");
                 updateState();
             }
             else
-            {
-                this.timer1.Enabled = false;
+            {             
                 settingService.setAutoChange("false");
                 updateState();
             }    
@@ -304,14 +302,12 @@ namespace WindowsSpotlightWallpaper
         private void AutoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             if (this.AutoToolStripMenuItem1.Text == "自动更换")
-            {               
-                this.timer1.Enabled = true;
+            {                              
                 settingService.setAutoChange("true");
                 updateState();
             }
             else
-            {             
-                this.timer1.Enabled = false;
+            {                           
                 settingService.setAutoChange("false");
                 updateState();
             }
@@ -367,11 +363,13 @@ namespace WindowsSpotlightWallpaper
 
             if (settingService.getAutoChange() == "true")
             {
+                this.timer1.Enabled = true;
                 this.AutoToolStripMenuItem1.Text = "取消自动更换";
                 this.AutodToolStripMenuItem.Text = "取消自动更换";
             }
             else
             {
+                this.timer1.Enabled = false;
                 this.AutoToolStripMenuItem1.Text = "自动更换";
                 this.AutodToolStripMenuItem.Text = "自动更换";
             }
