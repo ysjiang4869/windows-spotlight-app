@@ -324,8 +324,7 @@ namespace WindowsSpotlightWallpaper
                 index = 0;
                 view(index);
             }
-            Wallpaper.Set(files[index].FullName, Wallpaper.Style.Centered);
-            execute();
+            Wallpaper.Set(files[index].FullName, Wallpaper.Style.Centered);           
         }
 
         private void AutoRun(bool IsAutoRun)
@@ -373,6 +372,11 @@ namespace WindowsSpotlightWallpaper
                 this.AutoToolStripMenuItem1.Text = "自动更换";
                 this.AutodToolStripMenuItem.Text = "自动更换";
             }
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            execute();
         }
     }
 }
