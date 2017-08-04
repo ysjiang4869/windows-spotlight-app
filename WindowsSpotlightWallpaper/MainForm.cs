@@ -68,7 +68,7 @@ namespace WindowsSpotlightWallpaper
             {
                 if(file.Length<= 102400) { continue; }
 
-                file.CopyTo(tempFolder + file.Name+".jpg");
+                file.CopyTo(tempFolder + file.Name+".jpg",true);
                 
             }
             settingService.setLastRefreshTime(DateTime.Now);
