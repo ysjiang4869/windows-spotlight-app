@@ -69,6 +69,10 @@ namespace WindowsSpotlightWallpaper.service
         {
             RegistryKey loca_chek = Registry.LocalMachine;
             RegistryKey run_Check = loca_chek.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
+            if (run_Check.GetValue("WindowsSpotlight") == null)
+            {
+                return "false";
+            }
             if (run_Check.GetValue("WindowsSpotlight").ToString().ToLower() != "false")
             {
                 return "true";
@@ -77,6 +81,7 @@ namespace WindowsSpotlightWallpaper.service
             {
                 return "false";
             }
+            //return "false";
         }
 
         public void setAutoChange(string set)
