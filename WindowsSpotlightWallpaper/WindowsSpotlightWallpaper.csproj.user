@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
-    <InstallUrlHistory />
+    <PublishUrlHistory>E:\Code\personal-git\Windows-spotlight-wallpaper\publish\|E:\Code\personal-git\Windows-spotlight-wallpaper\publish\app\WindowsSpotlightWallpaper\|E:\Code\personal-git\Windows-spotlight-wallpaper\publish\app\|ftp://jiangyuesong.me/app/WindowsSpotlightWallpaper/|ftp://139.129.234.3/WindowsSpotlightWallpaper/</PublishUrlHistory>
+    <InstallUrlHistory>http://jiangyuesong.me/app/WindowsSpotlightWallpaper/|http://jiangyuesong.me/</InstallUrlHistory>
     <SupportUrlHistory />
     <UpdateUrlHistory />
     <BootstrapperUrlHistory />
