@@ -3,14 +3,17 @@
 This app collect windows spotlight wallpapers so you can set as your desktop background；
 
 该应用能够自动收集电脑中缓存得windows聚焦壁纸到指定目录
+注意：仅适用于win10系统，且需要开启windows聚焦（所有设置-个性化-锁屏界面，背景选择windows聚焦），需要管理员身份运行，如果windows提示风险，请选择“仍要运行”。
 
 下载连接：htttp://jiangyuesong.me
+
 ###**功能列表**##
 - **自动收集缓存壁纸到指定目录**
 - **预览/切换/设定壁纸**
 - **后台运行**
 - **开机启动**
 - **每小时自动切换壁纸**
+- **自定义自动切换时间**
 
 -------------------
 
@@ -24,6 +27,8 @@ This app collect windows spotlight wallpapers so you can set as your desktop bac
 软件主界面为壁纸的预览，能够通过界面右侧的按钮进行切换/设定壁纸；
 
 通过”设置-自动切换“（或者系统托盘右键菜单）可以设定壁纸每小时自动切换，”设置-取消自动切换“ 可以取消自动切换。
+
+“设置-自动更换时间”可以修改自动更换壁纸的时间，实时生效。
 
 ## 开机自启动
 
