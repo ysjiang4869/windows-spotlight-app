@@ -50,7 +50,7 @@ namespace WindowsSpotlightWallpaper
             Directory.CreateDirectory(tempFolder);
             Directory.CreateDirectory(horizontalFolder);
             Directory.CreateDirectory(verticalFolder);
-
+            timer1.Interval = settingService.getChangeTime();
             updateState();
         }
         /// <summary>
@@ -377,6 +377,23 @@ namespace WindowsSpotlightWallpaper
         private void timer2_Tick(object sender, EventArgs e)
         {
             execute();
+        }
+
+        private void OpenButton_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", settingService.getSavePath() + "\\Spotlight\\");
+        }
+
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", settingService.getSavePath() + "\\Spotlight\\");
+        }
+
+        private void ChangeTimeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeTime uitime = new ChangeTime(settingService);
+            uitime.ShowDialog();
+            timer1.Interval = settingService.getChangeTime();
         }
     }
 }

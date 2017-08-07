@@ -98,5 +98,20 @@ namespace WindowsSpotlightWallpaper.service
             }
             return ret;
         }
+
+        public void setChangeTime(int time)
+        {
+            handler.IniWriteValue("basic", "changetime", time.ToString());
+        }
+
+        public int getChangeTime()
+        {
+            string ret = handler.IniReadValue("basic", "changetime");
+            if (ret == "")
+            {
+                ret = "3600000";
+            }
+            return int.Parse(ret);
+        }
     }
 }

@@ -78,6 +78,12 @@
     <Compile Include="AboutBox1.Designer.cs">
       <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeTime.Designer.cs">
+      <DependentUpon>ChangeTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="service\Wallpaper.cs" />
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeTime.resx">
+      <DependentUpon>ChangeTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
