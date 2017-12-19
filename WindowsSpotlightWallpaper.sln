@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.14
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsSpotlightWallpaper", "WindowsSpotlightWallpaper\WindowsSpotlightWallpaper.csproj", "{FD72F2A2-9CE8-41D2-8560-ACCA8AC88485}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SettingApp", "SettingApp\SettingApp.csproj", "{9DD45CA0-9EE6-4A49-A477-B8FCF8363DAF}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SpotlightWallpaper", "SpotlightWallpaper\SpotlightWallpaper.vdproj", "{ADEF7BC4-F717-485D-85E4-DDBAA46036B9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,8 +19,17 @@ Global
 		{FD72F2A2-9CE8-41D2-8560-ACCA8AC88485}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD72F2A2-9CE8-41D2-8560-ACCA8AC88485}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD72F2A2-9CE8-41D2-8560-ACCA8AC88485}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD45CA0-9EE6-4A49-A477-B8FCF8363DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD45CA0-9EE6-4A49-A477-B8FCF8363DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD45CA0-9EE6-4A49-A477-B8FCF8363DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD45CA0-9EE6-4A49-A477-B8FCF8363DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ADEF7BC4-F717-485D-85E4-DDBAA46036B9}.Debug|Any CPU.ActiveCfg = Debug
+		{ADEF7BC4-F717-485D-85E4-DDBAA46036B9}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {81BD05EE-C417-4727-893A-E1E7C58F4C20}
 	EndGlobalSection
 EndGlobal

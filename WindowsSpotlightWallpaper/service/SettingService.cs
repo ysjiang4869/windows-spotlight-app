@@ -1,17 +1,20 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowsSpotlightWallpaper.service
 {
     public class SettingService
-    {
-        private static string path = System.Windows.Forms.Application.StartupPath + "\\settings.ini";
-
+    {       
+        private static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\spolightwallpaper\\settings.ini";
+        private static string settingAppPath = System.Windows.Forms.Application.StartupPath + "\\SettingApp.exe";
 
         private IniHandler handler;
 
@@ -65,24 +68,42 @@ namespace WindowsSpotlightWallpaper.service
             handler.reset();
         }
 
+
         public string getAutoRun()
         {
-            RegistryKey loca_chek = Registry.LocalMachine;
-            RegistryKey run_Check = loca_chek.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
-            if (run_Check.GetValue("WindowsSpotlight") == null)
+            string ret = handler.IniReadValue("basic", "autorun");
+            if (ret == "")
             {
-                return "false";
+                string[] args = new string[] { "2", path };
+                runSettingApp(args);
+                ret = handler.IniReadValue("basic", "autorun");
             }
-            if (run_Check.GetValue("WindowsSpotlight").ToString().ToLower() != "false")
-            {
-                return "true";
-            }
-            else
-            {
-                return "false";
-            }
-            //return "false";
+            return ret;
+                       
         }
+
+        public void setAutoRun(bool IsAutoRun)
+        {
+            //获取程序执行路径..
+            string starupPath = Application.ExecutablePath;
+            string[] args = new string[] { "1", Convert.ToString(IsAutoRun), starupPath };
+            runSettingApp(args);
+            handler.IniWriteValue("basic", "autorun", Convert.ToString(IsAutoRun).ToLower());           
+        }
+
+        public void runSettingApp(string[] args)
+        {
+            var psi = new ProcessStartInfo();
+            psi.FileName = settingAppPath;
+            psi.Arguments = String.Join("  ", args);
+            psi.Verb = "runas";
+
+            var process = new Process();
+            process.StartInfo = psi;
+            process.Start();
+            process.WaitForExit();           
+        }
+             
 
         public void setAutoChange(string set)
         {

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("SpotlightWallpaper")]
+[assembly: AssemblyTitle("SettingApp")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("YueSong Studio")]
-[assembly: AssemblyProduct("SpotlightWallpaper")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SettingApp")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("fd72f2a2-9ce8-41d2-8560-acca8ac88485")]
+[assembly: Guid("9dd45ca0-9ee6-4a49-a477-b8fcf8363daf")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

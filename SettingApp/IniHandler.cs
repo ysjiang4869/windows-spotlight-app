@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsSpotlightWallpaper
+namespace SettingApp
 {
     public class IniHandler
     {
@@ -71,7 +71,8 @@ namespace WindowsSpotlightWallpaper
             {
                 File.Delete(inipath);
                 CreateFile();
-            }        
+                
+            }
         }
     }
 }

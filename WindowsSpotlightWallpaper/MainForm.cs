@@ -201,14 +201,14 @@ namespace WindowsSpotlightWallpaper
         private void StartMethodToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (this.StartMethodToolStripMenuItem.Text == "开机启动")
-            {
-                AutoRun(true);
+            {                
+                settingService.setAutoRun(true);
                 updateState();
                 
             }
             else
             {
-                AutoRun(false);
+                settingService.setAutoRun(false);
                 updateState();
                
             }
@@ -218,7 +218,8 @@ namespace WindowsSpotlightWallpaper
         {
             settingService.reset();
             this.timer1.Enabled = false;
-            AutoRun(false);
+            settingService.setAutoRun(false);
+            updateState();
         }
 
         private void MainForm_Resize(object sender, EventArgs e)
@@ -325,28 +326,7 @@ namespace WindowsSpotlightWallpaper
                 view(index);
             }
             Wallpaper.Set(files[index].FullName, Wallpaper.Style.Centered);           
-        }
-
-        private void AutoRun(bool IsAutoRun)
-        {
-            //获取程序执行路径..
-            string starupPath = Application.ExecutablePath;
-            //class Micosoft.Win32.RegistryKey. 表示Window注册表中项级节点,此类是注册表装.
-            RegistryKey loca = Registry.LocalMachine;
-            RegistryKey run = loca.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
-            try
-            {
-                //SetValue:存储值的名称
-                if (IsAutoRun == false) run.SetValue("WindowsSpotlight", false);//取消开机运行
-                else run.SetValue("WindowsSpotlight", starupPath);//设置开机运行
-                loca.Close();                
-            }
-            catch
-            {
-                MessageBox.Show("请以管理员身运行程序！", "警告", MessageBoxButtons.OK);
-            }
-            updateState();
-        }
+        }    
 
         //更改自动更换和开机启动菜单的值
         private void updateState()
