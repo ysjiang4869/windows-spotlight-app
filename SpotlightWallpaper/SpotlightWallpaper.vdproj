@@ -15,19 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_145A40F1512BA29E2F62077E44F9B85B"
-        "OwnerKey" = "8:_B596376B0A43488E9B03387A10E54681"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_145A40F1512BA29E2F62077E44F9B85B"
-        "OwnerKey" = "8:_5C4A940BE73D45838DE579A82A179E87"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_5C4A940BE73D45838DE579A82A179E87"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6ACE9B40F6984F13ADFCB0500A6E7211"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -45,8 +39,20 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DBFEDA63313FAC3055BB31835E511FD0"
+        "OwnerKey" = "8:_5C4A940BE73D45838DE579A82A179E87"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DBFEDA63313FAC3055BB31835E511FD0"
+        "OwnerKey" = "8:_B596376B0A43488E9B03387A10E54681"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_145A40F1512BA29E2F62077E44F9B85B"
+        "OwnerKey" = "8:_B596376B0A43488E9B03387A10E54681"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +64,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_B596376B0A43488E9B03387A10E54681"
+        "OwnerKey" = "8:_DBFEDA63313FAC3055BB31835E511FD0"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -79,6 +85,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -95,6 +117,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -124,14 +154,54 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_145A40F1512BA29E2F62077E44F9B85B"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6ACE9B40F6984F13ADFCB0500A6E7211"
+            {
+            "SourcePath" = "8:..\\settings.ini"
+            "TargetName" = "8:settings.ini"
+            "Tag" = "8:"
+            "Folder" = "8:_3A9E255730C34FB8B6073141C7C339D9"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AAA10B9C69F04C8BB078AFAC970D40AD"
+            {
+            "SourcePath" = "8:..\\WindowsSpotlightWallpaper\\Iynque-Flurry-Extras-8-Wallpaper-Wizard.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_839536A373DA447A974D8E2E9835B24C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DBFEDA63313FAC3055BB31835E511FD0"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:System.Net.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"
                 "ScatterAssemblies"
                 {
-                    "_145A40F1512BA29E2F62077E44F9B85B"
+                    "_DBFEDA63313FAC3055BB31835E511FD0"
                     {
                     "Name" = "8:System.Net.Http.dll"
                     "Attributes" = "3:512"
@@ -155,32 +225,34 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AAA10B9C69F04C8BB078AFAC970D40AD"
-            {
-            "SourcePath" = "8:..\\WindowsSpotlightWallpaper\\Iynque-Flurry-Extras-8-Wallpaper-Wizard.ico"
-            "TargetName" = "8:icon.ico"
-            "Tag" = "8:"
-            "Folder" = "8:_839536A373DA447A974D8E2E9835B24C"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
         }
         "FileType"
         {
         }
         "Folder"
         {
+            "{1525181F-901A-416C-8A58-119130FE478E}:_3A097BF7F9904E45B86609E40CF68A18"
+            {
+            "Name" = "8:#1915"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:AppDataFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_3A9E255730C34FB8B6073141C7C339D9"
+                    {
+                    "Name" = "8:spolightwallpaper"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_CE7C97BB07B44DB5B89D45C66CB151BF"
+                        "Folders"
+                        {
+                        }
+                    }
+                }
+            }
             "{1525181F-901A-416C-8A58-119130FE478E}:_6C131D0AB6294CE0A0B2C7100E616D95"
             {
             "Name" = "8:#1916"
@@ -194,7 +266,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_839536A373DA447A974D8E2E9835B24C"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder]\\[Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -243,7 +315,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Spotlight Wallpaper"
         "ProductCode" = "8:{AEBB8B23-EA69-4B78-B1CA-8AF6E2AEEC24}"
-        "PackageCode" = "8:{E03F2EFE-AF9C-4331-81C6-28B61E7FB94B}"
+        "PackageCode" = "8:{0ECFBA61-202F-4398-9FD9-5E8CA28F9B7E}"
         "UpgradeCode" = "8:{397AE522-ECF1-49C7-B41C-1A6863CF44CC}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -264,7 +336,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"

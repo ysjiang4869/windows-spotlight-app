@@ -14,7 +14,7 @@ namespace SettingApp
         /// </summary>
         /// <param name="args">
         /// param1:function number 
-        /// param2-N: function params
+        /// param2-N: function params,ATTENTION:exe 执行文件的后缀不能有某些特殊字符，所以不能传递路径
         /// </param>
         public static void Main(string[] args)
         {           
@@ -26,38 +26,44 @@ namespace SettingApp
             switch (num)
             {
                 case 1:
-                    bool isAutoRun = Convert.ToBoolean(args[1]);
-                    string startupPath = args[2];
-                    AutoRun(isAutoRun, startupPath);
+                    bool isAutoRun = Convert.ToBoolean(args[1]);                    
+                    AutoRun(isAutoRun);
                     break;
-                case 2:
-                    string inipath = args[1];
-                    getRegisteryAutoRun(inipath);
+                case 2:                    
+                    getRegisteryAutoRun();
                     break;
                 default:                   
                     break;
-            }           
-        }
-
+            }   
+        }    
+      
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="IsAutoRun">是否自动启动</param>
-        /// <param name="startupPath">程序启动路径</param>        
-        public static void AutoRun(bool IsAutoRun,string startupPath)
-        {                    
-            //class Micosoft.Win32.RegistryKey. 表示Window注册表中项级节点,此类是注册表装.
-            RegistryKey loca = Registry.LocalMachine;
-            RegistryKey run = loca.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run");
-
+        /// <param name="IsAutoRun">是否自动启动</param>           
+        public static void AutoRun(bool IsAutoRun)
+        {
+            string startupPath = Environment.CurrentDirectory + "\\WindowsSpotlightWallpaper.exe";
+            //class Micosoft.Win32.RegistryKey. 表示Window注册表中项级节点,此类是注册表装.         
+            RegistryKey loca_chek = Registry.LocalMachine;
+            RegistryKey run = loca_chek.CreateSubKey(@"SOFTWARE\Microsoft\Windows\CurrentVersion\Run",true);//打开注册表子项        
             //SetValue:存储值的名称
-            if (IsAutoRun == false) run.SetValue("WindowsSpotlight", false);//取消开机运行
-            else run.SetValue("WindowsSpotlight", startupPath);//设置开机运行
-            loca.Close();
+            if (IsAutoRun == false)
+            {
+                run.DeleteValue("WindowsSpotlight",false);
+            }
+            else
+            {
+                run.SetValue("WindowsSpotlight", startupPath);//设置开机运行
+            }
+            run.Close();
         }
 
-        public static void getRegisteryAutoRun(string inipath)        
+        private static string settingpath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\spolightwallpaper\\settings.ini";
+
+        public static void getRegisteryAutoRun()        
         {
+            string inipath = settingpath;
             IniHandler handler = new IniHandler();
             handler.init(inipath);
             if (!handler.ExistINIFile())
@@ -70,14 +76,10 @@ namespace SettingApp
             if (run_Check.GetValue("WindowsSpotlight") == null)
             {
                 isAutoRun= "false";
-            }
-            if (run_Check.GetValue("WindowsSpotlight").ToString().ToLower() != "false")
-            {
-                isAutoRun = "true";
-            }
+            }          
             else
             {
-                isAutoRun = "false";
+                isAutoRun = "true";
             }
 
             handler.IniWriteValue("basic", "autorun", isAutoRun);

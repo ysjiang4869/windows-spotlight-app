@@ -14,12 +14,11 @@ namespace WindowsSpotlightWallpaper.service
     public class SettingService
     {       
         private static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\spolightwallpaper\\settings.ini";
-        private static string settingAppPath = System.Windows.Forms.Application.StartupPath + "\\SettingApp.exe";
+        private static string settingAppPath = Application.StartupPath + "\\SettingApp.exe";
 
         private IniHandler handler;
 
-        private static string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-        private string lastRefreshTime;
+        private static string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures); 
         
         
 
@@ -74,7 +73,7 @@ namespace WindowsSpotlightWallpaper.service
             string ret = handler.IniReadValue("basic", "autorun");
             if (ret == "")
             {
-                string[] args = new string[] { "2", path };
+                string[] args = new string[] { "2" };
                 runSettingApp(args);
                 ret = handler.IniReadValue("basic", "autorun");
             }
@@ -83,10 +82,8 @@ namespace WindowsSpotlightWallpaper.service
         }
 
         public void setAutoRun(bool IsAutoRun)
-        {
-            //获取程序执行路径..
-            string starupPath = Application.ExecutablePath;
-            string[] args = new string[] { "1", Convert.ToString(IsAutoRun), starupPath };
+        {                      
+            string[] args = new string[] { "1", Convert.ToString(IsAutoRun)};
             runSettingApp(args);
             handler.IniWriteValue("basic", "autorun", Convert.ToString(IsAutoRun).ToLower());           
         }
