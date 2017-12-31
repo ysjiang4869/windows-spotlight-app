@@ -1,53 +1,27 @@
-# **Windows Spotlight App（Windows聚焦壁纸）**
+# Windows Spotlight App（Windows聚焦壁纸）
 
-This app collect windows spotlight wallpapers so you can set as your desktop background；
+This app collect windows spotlight wallpapers so you can set as your desktop background
 
 该应用能够自动收集电脑中缓存得windows聚焦壁纸到指定目录
 注意：仅适用于win10系统，且需要开启windows聚焦（所有设置-个性化-锁屏界面，背景选择windows聚焦），需要管理员身份运行，如果windows提示风险，请选择“仍要运行”。
 
-下载连接：htttp://jiangyuesong.me 或者直接下载项目中的Install文件夹中的文件
+## 截图
+![](http://img.blog.csdn.net/20171231091836105)
 
-## 安装 ##
-- 绿色安装：解压Install文件夹中的压缩文件，运行WindowsSpotlightWallpaper.exe 即可（需要自己手动右键创建快捷方式）
-- 安装包：直接运行Install文件夹中的Spotlight Wallpaper.msi文件，按照提示安装
+---
 
--------------------
+## 功能 ##
+- 自动收集缓存壁纸到指定目录
+- 预览/切换/设定壁纸
+- 后台运行
+- 开机启动
+- 每小时自动切换壁纸
+- 自定义自动切换时间
 
-## 功能列表 ##
-- **自动收集缓存壁纸到指定目录**
-- **预览/切换/设定壁纸**
-- **后台运行**
-- **开机启动**
-- **每小时自动切换壁纸**
-- **自定义自动切换时间**
+## 文档&下载
+访问链接：[Windows聚焦壁纸](http://jiangyuesong.me/2017/12/31/spotlight-wallpaper/)
 
--------------------
+---
 
-### 自动收集功能
-
-软件启动时，自动获取电脑中缓存得windows聚焦壁纸，默认保存到“我的图片\Spotlight"目录下，其中CopyAssets为缓存目录，horizontal是1920×1080电脑壁纸，verticle目录为手机规格壁纸。
-
-软件后台运行时，能够每小时更新一次壁纸，若不喜欢后台运行软件，还请定期运行软件，保持壁纸能够及时更新（系统缓存的壁纸文件会在一定时间后清除，看到喜欢的windows聚焦壁纸要及时运行软件！！）
-
-### 预览/设定/切换壁纸
-软件主界面为壁纸的预览，能够通过界面右侧的按钮进行切换/设定壁纸；
-
-通过”设置-自动切换“（或者系统托盘右键菜单）可以设定壁纸每小时自动切换，”设置-取消自动切换“ 可以取消自动切换。
-
-“设置-自动更换时间”可以修改自动更换壁纸的时间，实时生效。
-
-### 开机自启动
-
-通过”设置-开机启动“（或者系统托盘右键菜单）可以设置软件随系统启动，”设置-取消开机启动“ 可以取消。
-
-### 修改默认目录
-
-通过”设置-修改存储路径”在弹出的对话框中选择文件夹，可以修改默认的存储路径，之前的缓存会移动到新的目录，且旧目录会删除。
-
-### 重置
-通过“设置-恢复默认设置"可以恢复以上设置到初始状态。
-
-
-----------
 如有任何疑问或者问题反馈，请发邮件至邮箱ysjiang92@gmail.com
 
