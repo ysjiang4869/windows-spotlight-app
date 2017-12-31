@@ -6,7 +6,7 @@ This app collect windows spotlight wallpapers so you can set as your desktop bac
 注意：仅适用于win10系统，且需要开启windows聚焦（所有设置-个性化-锁屏界面，背景选择windows聚焦），需要管理员身份运行，如果windows提示风险，请选择“仍要运行”。
 
 ## 截图
-![](http://img.blog.csdn.net/20171231095559762)
+![](http://img.blog.csdn.net/20171231095748135)
 
 ---
 
