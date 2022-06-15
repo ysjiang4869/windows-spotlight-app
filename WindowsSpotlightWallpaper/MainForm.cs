@@ -21,6 +21,17 @@ namespace WindowsSpotlightWallpaper
             init();
             execute();
             view(index);
+
+            if (settingService.MinimizedOnStartup)
+            {  
+                this.Shown += OnShown;
+            }
+        }
+
+        private void OnShown(object sender, EventArgs e)
+        {
+            this.Shown -= OnShown;
+            WindowState = FormWindowState.Minimized;
         }
 
         private string tempFolder;
@@ -226,10 +237,8 @@ namespace WindowsSpotlightWallpaper
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
-                this.WindowState = FormWindowState.Normal;
                 notifyIcon.Visible = true;
                 this.Hide();
-                this.ShowInTaskbar = false;            
             }
         }
 
@@ -238,7 +247,6 @@ namespace WindowsSpotlightWallpaper
             if(e.Button == MouseButtons.Left)
             {
                 notifyIcon.Visible = false;
-                this.ShowInTaskbar = true;
                 this.Show();
                 this.Activate();
                 this.WindowState = FormWindowState.Normal;
@@ -270,10 +278,15 @@ namespace WindowsSpotlightWallpaper
             }    
         }
 
+        private void MinimizedOnStartupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settingService.MinimizedOnStartup = !settingService.MinimizedOnStartup;
+            updateState();
+        }
+
         private void OpendToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notifyIcon.Visible = false;
-            this.ShowInTaskbar = true;
             this.Show();
             this.Activate();
             this.WindowState = FormWindowState.Normal;
@@ -339,6 +352,8 @@ namespace WindowsSpotlightWallpaper
             {
                 this.StartMethodToolStripMenuItem.Text = "开机启动";
             }
+
+            this.MinimizedOnStartupToolStripMenuItem.Checked = settingService.MinimizedOnStartup;
 
             if (settingService.getAutoChange() == "true")
             {
