@@ -64,25 +64,26 @@ namespace WindowsSpotlightWallpaper.service
             handler.reset();
         }
 
-
-        public string getAutoRun()
+        public bool AutoRun
         {
-            string ret = handler.IniReadValue("basic", "autorun");
-            if (ret == "")
+            get
             {
-                string[] args = new string[] {"2"};
-                runSettingApp(args);
-                ret = handler.IniReadValue("basic", "autorun");
+                string ret = handler.IniReadValue("basic", nameof(AutoRun));
+                if (ret == "")
+                {
+                    string[] args = {"2"};
+                    runSettingApp(args);
+                    ret = handler.IniReadValue("basic", nameof(AutoRun));
+                }
+
+                return bool.TryParse(ret, out bool result) && result;
             }
-
-            return ret;
-        }
-
-        public void setAutoRun(bool IsAutoRun)
-        {
-            string[] args = new string[] {"1", Convert.ToString(IsAutoRun)};
-            runSettingApp(args);
-            handler.IniWriteValue("basic", "autorun", Convert.ToString(IsAutoRun).ToLower());
+            set
+            {
+                string[] args = {"1", value.ToString()};
+                runSettingApp(args);
+                handler.IniWriteValue("basic", nameof(AutoRun), value.ToString());
+            }
         }
 
         public bool MinimizedOnStartup
@@ -108,21 +109,14 @@ namespace WindowsSpotlightWallpaper.service
             process.WaitForExit();
         }
 
-
-        public void setAutoChange(string set)
+        public bool AutoChange 
         {
-            handler.IniWriteValue("basic", "autochange", set);
-        }
-
-        public string getAutoChange()
-        {
-            string ret = handler.IniReadValue("basic", "autochange");
-            if (ret == "")
+            get
             {
-                ret = "false";
+                string ret = handler.IniReadValue("basic", nameof(AutoChange).ToLower());
+                return bool.TryParse(ret, out bool result) && result;
             }
-
-            return ret;
+            set => handler.IniWriteValue("basic", nameof(AutoChange).ToLower(), value.ToString());
         }
 
         public void setChangeTime(int time)
