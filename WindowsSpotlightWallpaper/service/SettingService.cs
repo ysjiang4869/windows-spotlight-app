@@ -1,26 +1,21 @@
-﻿using Microsoft.Win32;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Security.Permissions;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace WindowsSpotlightWallpaper.service
 {
     public class SettingService
-    {       
-        private static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\spolightwallpaper\\settings.ini";
+    {
+        private static string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) +
+                                     "\\spolightwallpaper\\settings.ini";
+
         private static string settingAppPath = Application.StartupPath + "\\SettingApp.exe";
 
         private IniHandler handler;
 
-        private static string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures); 
-        
-        
+        private static string saveFolder = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+
 
         public SettingService()
         {
@@ -44,6 +39,7 @@ namespace WindowsSpotlightWallpaper.service
             {
                 ret = saveFolder;
             }
+
             return ret;
         }
 
@@ -57,35 +53,47 @@ namespace WindowsSpotlightWallpaper.service
             string ret = handler.IniReadValue("basic", "refreshtime");
             if (ret == "")
             {
-               return DateTime.Parse("2000-01-01");
+                return DateTime.Parse("2000-01-01");
             }
+
             return DateTime.Parse(ret);
         }
-        
+
         public void reset()
         {
             handler.reset();
         }
 
-
-        public string getAutoRun()
+        public bool AutoRun
         {
-            string ret = handler.IniReadValue("basic", "autorun");
-            if (ret == "")
+            get
             {
-                string[] args = new string[] { "2" };
-                runSettingApp(args);
-                ret = handler.IniReadValue("basic", "autorun");
+                string ret = handler.IniReadValue("basic", nameof(AutoRun));
+                if (ret == "")
+                {
+                    string[] args = {"2"};
+                    runSettingApp(args);
+                    ret = handler.IniReadValue("basic", nameof(AutoRun));
+                }
+
+                return bool.TryParse(ret, out bool result) && result;
             }
-            return ret;
-                       
+            set
+            {
+                string[] args = {"1", value.ToString()};
+                runSettingApp(args);
+                handler.IniWriteValue("basic", nameof(AutoRun), value.ToString());
+            }
         }
 
-        public void setAutoRun(bool IsAutoRun)
-        {                      
-            string[] args = new string[] { "1", Convert.ToString(IsAutoRun)};
-            runSettingApp(args);
-            handler.IniWriteValue("basic", "autorun", Convert.ToString(IsAutoRun).ToLower());           
+        public bool MinimizedOnStartup
+        {
+            get
+            {
+                string ret = handler.IniReadValue("basic", nameof(MinimizedOnStartup));
+                return bool.TryParse(ret, out bool result) && result;
+            }
+            set => handler.IniWriteValue("basic", nameof(MinimizedOnStartup), value.ToString());
         }
 
         public void runSettingApp(string[] args)
@@ -98,23 +106,17 @@ namespace WindowsSpotlightWallpaper.service
             var process = new Process();
             process.StartInfo = psi;
             process.Start();
-            process.WaitForExit();           
-        }
-             
-
-        public void setAutoChange(string set)
-        {
-            handler.IniWriteValue("basic", "autochange", set);
+            process.WaitForExit();
         }
 
-        public string getAutoChange()
+        public bool AutoChange 
         {
-            string ret = handler.IniReadValue("basic", "autochange");
-            if (ret == "")
+            get
             {
-                ret = "false";
+                string ret = handler.IniReadValue("basic", nameof(AutoChange).ToLower());
+                return bool.TryParse(ret, out bool result) && result;
             }
-            return ret;
+            set => handler.IniWriteValue("basic", nameof(AutoChange).ToLower(), value.ToString());
         }
 
         public void setChangeTime(int time)
@@ -129,6 +131,7 @@ namespace WindowsSpotlightWallpaper.service
             {
                 ret = "3600000";
             }
+
             return int.Parse(ret);
         }
     }

@@ -21,6 +21,17 @@ namespace WindowsSpotlightWallpaper
             init();
             execute();
             view(index);
+
+            if (settingService.MinimizedOnStartup)
+            {  
+                this.Shown += OnShown;
+            }
+        }
+
+        private void OnShown(object sender, EventArgs e)
+        {
+            this.Shown -= OnShown;
+            WindowState = FormWindowState.Minimized;
         }
 
         private string tempFolder;
@@ -200,25 +211,15 @@ namespace WindowsSpotlightWallpaper
         //TODO add auto start
         private void StartMethodToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.StartMethodToolStripMenuItem.Text == "开机启动")
-            {                
-                settingService.setAutoRun(true);
-                updateState();
-                
-            }
-            else
-            {
-                settingService.setAutoRun(false);
-                updateState();
-               
-            }
+            settingService.AutoRun = !settingService.AutoRun;
+            updateState();
         }
 
         private void ResetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             settingService.reset();
             this.timer1.Enabled = false;
-            settingService.setAutoRun(false);
+            settingService.AutoRun = false;
             updateState();
         }
 
@@ -226,10 +227,8 @@ namespace WindowsSpotlightWallpaper
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
-                this.WindowState = FormWindowState.Normal;
                 notifyIcon.Visible = true;
                 this.Hide();
-                this.ShowInTaskbar = false;            
             }
         }
 
@@ -238,7 +237,6 @@ namespace WindowsSpotlightWallpaper
             if(e.Button == MouseButtons.Left)
             {
                 notifyIcon.Visible = false;
-                this.ShowInTaskbar = true;
                 this.Show();
                 this.Activate();
                 this.WindowState = FormWindowState.Normal;
@@ -258,22 +256,19 @@ namespace WindowsSpotlightWallpaper
 
         private void AutodToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.AutoToolStripMenuItem1.Text == "自动更换")
-            {                
-                settingService.setAutoChange("true");
-                updateState();
-            }
-            else
-            {             
-                settingService.setAutoChange("false");
-                updateState();
-            }    
+            settingService.AutoChange = !settingService.AutoChange;
+            updateState();
+        }
+
+        private void MinimizedOnStartupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            settingService.MinimizedOnStartup = !settingService.MinimizedOnStartup;
+            updateState();
         }
 
         private void OpendToolStripMenuItem_Click(object sender, EventArgs e)
         {
             notifyIcon.Visible = false;
-            this.ShowInTaskbar = true;
             this.Show();
             this.Activate();
             this.WindowState = FormWindowState.Normal;
@@ -302,16 +297,8 @@ namespace WindowsSpotlightWallpaper
 
         private void AutoToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (this.AutoToolStripMenuItem1.Text == "自动更换")
-            {                              
-                settingService.setAutoChange("true");
-                updateState();
-            }
-            else
-            {                           
-                settingService.setAutoChange("false");
-                updateState();
-            }
+            settingService.AutoChange = !settingService.AutoChange;
+            updateState();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -331,27 +318,12 @@ namespace WindowsSpotlightWallpaper
         //更改自动更换和开机启动菜单的值
         private void updateState()
         {
-            if (settingService.getAutoRun() == "true")
-            {
-                this.StartMethodToolStripMenuItem.Text = "取消开机启动";
-            }
-            else
-            {
-                this.StartMethodToolStripMenuItem.Text = "开机启动";
-            }
+            this.StartMethodToolStripMenuItem.Checked = settingService.AutoRun;
+            this.MinimizedOnStartupToolStripMenuItem.Checked = settingService.MinimizedOnStartup;
 
-            if (settingService.getAutoChange() == "true")
-            {
-                this.timer1.Enabled = true;
-                this.AutoToolStripMenuItem1.Text = "取消自动更换";
-                this.AutodToolStripMenuItem.Text = "取消自动更换";
-            }
-            else
-            {
-                this.timer1.Enabled = false;
-                this.AutoToolStripMenuItem1.Text = "自动更换";
-                this.AutodToolStripMenuItem.Text = "自动更换";
-            }
+            this.AutoToolStripMenuItem1.Checked = settingService.AutoChange;
+            this.AutodToolStripMenuItem.Checked = settingService.AutoChange;
+            this.timer1.Enabled = settingService.AutoChange;
         }
 
         private void timer2_Tick(object sender, EventArgs e)
